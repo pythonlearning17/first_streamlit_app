@@ -26,12 +26,12 @@ streamlit.header("Fruityvice Fruit Advice!")
 fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')#adding input
 streamlit.write('The user entered ', fruit_choice) #added variable
 
-
 import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice) #added the input variable
-
 
 # normalize the JSON data
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # shows the output in a table form
 streamlit.dataframe(fruityvice_normalized)
+
+import snowflake.connector
