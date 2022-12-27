@@ -70,11 +70,7 @@ def insert_row_snowflake(new_fruit):
 add_my_fruit = streamlit.text_input('What fruit would you like to add?')
 if streamlit.button('Add a Fruit to the List'):
     my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"]) # connecting to snowflake
-    back_from_funtion = insert_row_snowflake(add_my_fruit)
+    back_from_function = insert_row_snowflake(add_my_fruit)
     streamlit.text(back_from_function)
     
-#adding the confirmation message 
-#streamlit.write('Thanks for adding', add_my_fruit) # moved inside function
 
-#Trying to add fruit name from streamlit to snowflakes table
-#my_cur.execute("insert into fruit_load_list values ('from streamlit')") #moved to add list function
